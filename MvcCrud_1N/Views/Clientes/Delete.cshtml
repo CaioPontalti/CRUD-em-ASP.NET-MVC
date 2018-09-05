@@ -1,0 +1,43 @@
+﻿@model MvcCrud_1N.Models.Clientes
+
+<h3>Deletar Cliente</h3>
+
+<h4>Tem certeza que deseja deletar esse cliente ?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Consultores.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Consultores.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> 
+            @Html.ActionLink("Back to List", "Index", "Index", new {@class= "btn btn-info" } )
+        </div>
+    }
+</div>
